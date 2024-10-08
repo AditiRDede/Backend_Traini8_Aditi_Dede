@@ -26,6 +26,8 @@ public class TrainingCenter {
 
     private int studentCapacity;
 
+
+    @ElementCollection
     private List<String> courses;
 
     @Column(updatable = false)
@@ -40,10 +42,11 @@ public class TrainingCenter {
 
     // Automatically set the createdOn epoch time before persisting the entity
     @PrePersist
-    protected void onCreate() {
+    public void onCreate() {
         this.createdOn = Instant.now().getEpochSecond();
     }
     public void setCreatedOn(Long createdOn) {
         // Discard user input for createdOn
+        this.createdOn = Instant.now().getEpochSecond();
     }
 }
