@@ -11,7 +11,6 @@ public class TrainingCenterService
     @Autowired
     private TrainingCenterRepository trainingCenterRepository;
 
-
     public void addTrainingCenter(TrainingCenter trainingCenter)
     {
         trainingCenterRepository.save(trainingCenter);
@@ -20,14 +19,10 @@ public class TrainingCenterService
     {
         return trainingCenterRepository.findAll();
     }
-   /*
-    public List<TrainingCenter> searchByKeyword()
-   {
-       return trainingCenterRepository.
-   }
-   */
+
     public Optional<TrainingCenter> getTrainingCenterByCode(String code)
     {
+
         return trainingCenterRepository.findById(code);
     }
 

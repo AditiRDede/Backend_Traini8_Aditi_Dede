@@ -25,8 +25,6 @@ public class TrainingCenter {
     private Address address;
 
     private int studentCapacity;
-
-
     @ElementCollection
     private List<String> courses;
 
